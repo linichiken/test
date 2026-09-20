@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitZone 健身課程</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Fit<span>Zone</span></a>
+      <nav class="nav">
+        <a href="#courses">課程</a>
+        <a href="#trainers">教練</a>
+        <a href="#pricing">方案</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>打造更好的自己，從這裡開始</h1>
+      <p>多元健身課程，專業教練陪你一起達成目標。</p>
+      <a href="#courses" class="btn btn-primary">立即查看課程</a>
+    </div>
+  </section>
+
+  <section id="courses" class="section">
+    <div class="container">
+      <h2 class="section-title">熱門課程</h2>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="strength">重量訓練</button>
+        <button class="filter-btn" data-filter="cardio">有氧</button>
+        <button class="filter-btn" data-filter="yoga">瑜珈</button>
+        <button class="filter-btn" data-filter="dance">舞蹈</button>
+      </div>
+      <div class="course-grid" id="courseGrid"></div>
+    </div>
+  </section>
+
+  <section id="trainers" class="section alt">
+    <div class="container">
+      <h2 class="section-title">專業教練團隊</h2>
+      <div class="trainer-grid" id="trainerGrid"></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="section-title">會員方案</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>基礎方案</h3>
+          <p class="price">NT$990<span>/月</span></p>
+          <ul>
+            <li>使用健身器材</li>
+            <li>每週 2 堂團體課程</li>
+            <li>更衣室與淋浴間</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">選擇方案</a>
+        </div>
+        <div class="price-card featured">
+          <span class="badge">最受歡迎</span>
+          <h3>進階方案</h3>
+          <p class="price">NT$1,690<span>/月</span></p>
+          <ul>
+            <li>無限次團體課程</li>
+            <li>每月 1 次體態評估</li>
+            <li>免費停車</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">選擇方案</a>
+        </div>
+        <div class="price-card">
+          <h3>私人教練方案</h3>
+          <p class="price">NT$3,990<span>/月</span></p>
+          <ul>
+            <li>每週 2 堂一對一課程</li>
+            <li>客製化訓練菜單</li>
+            <li>飲食建議諮詢</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">選擇方案</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <div class="container contact-inner">
+      <div>
+        <h2 class="section-title">立即報名</h2>
+        <p>填寫表單，我們將盡快與您聯繫，安排體驗課程。</p>
+      </div>
+      <form id="signupForm" class="signup-form">
+        <label>
+          姓名
+          <input type="text" name="name" required placeholder="請輸入姓名">
+        </label>
+        <label>
+          電話
+          <input type="tel" name="phone" required placeholder="請輸入聯絡電話">
+        </label>
+        <label>
+          有興趣的課程
+          <select name="course">
+            <option value="strength">重量訓練</option>
+            <option value="cardio">有氧</option>
+            <option value="yoga">瑜珈</option>
+            <option value="dance">舞蹈</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary">送出報名</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 FitZone 健身工作室. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
