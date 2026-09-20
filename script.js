@@ -61,12 +61,31 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
   });
 });
 
-document.getElementById("signupForm").addEventListener("submit", (e) => {
+document.getElementById("signupForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.target;
   const name = form.name.value.trim();
+  const phone = form.phone.value.trim();
+  const course = form.course.value;
   const message = document.getElementById("formMessage");
-  if (!name) return;
+  const submitBtn = form.querySelector("button[type=submit]");
+  if (!name || !phone) return;
+
+  submitBtn.disabled = true;
+  message.textContent = "送出中...";
+
+  const { error } = await supabaseClient
+    .from("registrations")
+    .insert({ name, phone, course });
+
+  submitBtn.disabled = false;
+
+  if (error) {
+    console.error(error);
+    message.textContent = "很抱歉，報名送出失敗，請稍後再試。";
+    return;
+  }
+
   message.textContent = `謝謝 ${name}，我們已收到您的報名，將盡快與您聯繫！`;
   form.reset();
 });
